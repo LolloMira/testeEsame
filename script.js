@@ -3,10 +3,11 @@ fetch('https://api.punkapi.com/v2/beers')
 
 function displayBeers(beers) {
   const container = document.getElementById('container');
-  
   for (const beer of beers) {
     console.log(beer);
     const beerDiv = document.createElement('div');
+    beerDiv.classList.add('card');
+    beerDiv.classList.add('border-warning');
     beerDiv.classList.add('beer');
 
     const beerImage = document.createElement('img');
@@ -27,7 +28,6 @@ function displayBeers(beers) {
     beerDiv.appendChild(foodPairing);
 
     const foodPairingList = document.createElement('ul');
-
     for (const pairing of beer.food_pairing) {
       const pairingLi = document.createElement('li');
       pairingLi.innerText = pairing;
